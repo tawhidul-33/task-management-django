@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static "css/output.css" %}">
+</head>
+<body>
+    <div>
+        {% if message %}
+        <p>{{message}}</p>
+        {% endif %}
+    </div>
+    <form method="POST">
+        <div class="w-1/2 mx-auto mt-8">
+          
+            {% csrf_token %}
+
+            {% comment %} <label for="">Title</label>
+            <input type="text" name="title">
+            <label for="">Number</label>
+            <input type="text" name="number"> {% endcomment %}
+            {{form.as_p}} {% comment %}  as_p mane form tare <p> tag akare dekhabe{% endcomment %}
+
+            <button type="submit" class="bg-gray-600 px-3 text-white mt-2 rounded">submit</button>
+        </div>
+    </form>
+</body>
+</html>
+

@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+</head>
+<body>
+    <p class="lal-bg">Test </p>
+    <img src="{% static "image/download.png" %}" alt="">
+    {% for name in names %}
+       {% if not name == "sohan" %}
+         <p>{{name}}</p>
+       {% endif %}
+    {% endfor %}
+    {{age}}
+
+    
+    
+      {% with a=10 %}
+      <div>valu of a {{a}}</div>
+      {% endwith %}
+
+      {{count}}
+
+
+</body>
+</html>
