@@ -23,9 +23,12 @@ class Task(models.Model):
         Project,
         on_delete=models.CASCADE,
         default=1,
+        related_name="tasks"
+        )
+    assigned_to =models.ManyToManyField(
+        Employee,
         related_name='tasks'
         )
-    assigned_to =models.ManyToManyField(Employee,related_name='tasks')
     title=models.CharField(max_length=250)
     description=models.TextField()
     due_date=models.DateField()

@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <div>
+    {% comment %} <div>
        <ul>
          {% for task in tasks %}
             <li>
@@ -21,6 +21,29 @@
     </div>
     <div>
         {{first_task}}
+    </div> {% endcomment %}
+    <div>
+        {% comment %}
+          <ol>
+            {% for task in tasks %}
+              <li>
+                <span>{{task.title}}<span>
+                {% for employee  in task.assigned_to.all%}
+                  <p>E-name=> {{employee.name}}</p>
+                {% endfor %}
+              </li>
+            {% endfor %}
+        </ol>
+        {% endcomment %}
+        {% comment %} <P> {{task_count.num_task}}</p> {% endcomment %}
+         {% for project in  projects%}
+         <li>
+           <p>{{project.name}}</p>
+           <p>{{project.task_in_project}}</p>
+         </li>
+
+
+         {% endfor %}
     </div>
 </body>
 </html>
